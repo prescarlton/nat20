@@ -1,14 +1,17 @@
 import { ThemeProvider } from "@mui/material"
-import React from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App"
 import theme from "./theme"
 import "./globalStyles.css"
+import { BrowserRouter } from "react-router-dom"
+import AppRouter from "./router"
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+const container = document.getElementById("root")
+const root = ReactDOM.createRoot(container!)
+
+root.render(
+  <BrowserRouter>
     <ThemeProvider theme={theme}>
-      <App />
+      <AppRouter />
     </ThemeProvider>
-  </React.StrictMode>
+  </BrowserRouter>
 )

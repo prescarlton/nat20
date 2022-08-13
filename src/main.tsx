@@ -1,7 +1,5 @@
-import { ThemeProvider } from "@mui/material"
 import ReactDOM from "react-dom/client"
-import theme from "./theme"
-import "./globalStyles.css"
+import "./index.css"
 import { BrowserRouter } from "react-router-dom"
 import AppRouter from "./router"
 
@@ -10,8 +8,6 @@ const root = ReactDOM.createRoot(container!)
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <AppRouter />
-    </ThemeProvider>
+    <AppRouter />
   </BrowserRouter>
 )

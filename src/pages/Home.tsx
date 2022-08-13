@@ -1,18 +1,12 @@
-import { Box, Typography } from "@mui/material"
+import Page from "../components/Page"
 
 const HomePage = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        flex: 1,
-      }}
-    >
-      <Typography variant="h1">nat20 - coming soon</Typography>
-    </Box>
+    <Page>
+      <div className="h-screen flex justify-center w-full">
+        <h1 className="text-3xl">nat20 - coming soon</h1>
+      </div>
+    </Page>
   )
 }
 export default HomePage

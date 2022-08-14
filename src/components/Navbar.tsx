@@ -13,23 +13,24 @@ const Navbar = () => {
   ]
   return (
     <div
-      className="md:h-[calc(100vh-2rem)] md:w-[15.625rem] rounded-xl
+      className={`md:h-[calc(100vh-2rem)] md:w-[15.625rem] rounded-xl
       m-4 shadow-hard
       bg-gradient-to-b from-[#42424a] to-[#191919]
       dark:bg-none dark:bg-dark-bg-alt 
       w-[calc(100vw-2rem)]
-
-      "
+      transition-all 
+      ${showMobileLinks ? "h-32" : "h-14"}
+  `}
     >
       <div className="flex items-center md:justify-center text-white p-4 md:pt-6 gap-4">
         {showMobileLinks ? (
           <MdClose
-            className={`text-lg md:hidden `}
+            className={`text-2xl md:hidden`}
             onClick={toggleMobileLinks}
           />
         ) : (
           <MdMenu
-            className={`text-lg md:hidden `}
+            className={`text-2xl md:hidden`}
             onClick={toggleMobileLinks}
           />
         )}
@@ -37,11 +38,12 @@ const Navbar = () => {
       </div>
       <div
         className={`${
-          showMobileLinks ? "flex" : "hidden"
+          showMobileLinks ? "flex animate-show" : "hidden"
         } md:flex md:flex-col gap-1 p-4 transition-all`}
       >
-        {showMobileLinks &&
-          links.map((link) => <NavItem key={link.path} {...link} />)}
+        {links.map((link) => (
+          <NavItem key={link.path} {...link} />
+        ))}
       </div>
     </div>
   )

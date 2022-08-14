@@ -13,6 +13,15 @@ module.exports = {
         soft: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         hard: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
       },
+      keyframes: {
+        show: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        show: "show .25s ease-in-out",
+      },
     },
   },
   plugins: [],

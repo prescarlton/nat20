@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 
 const AppLayout = () => {
   return (
-    <div className="h-screen overflow-hidden flex bg-light-bg dark:bg-dark-bg">
+    <div className="h-full overflow-hidden flex flex-col md:flex-row bg-light-bg dark:bg-dark-bg">
       <Navbar />
       <Outlet />
     </div>

@@ -19,7 +19,7 @@ const Navbar = () => {
       dark:bg-none dark:bg-dark-bg-alt 
       w-[calc(100vw-2rem)]
       transition-all 
-      ${showMobileLinks ? "h-32" : "h-14"}
+      ${showMobileLinks ? "h-32" : "h-14"} overflow-hidden
   `}
     >
       <div className="flex items-center md:justify-center text-white p-4 md:pt-6 gap-4">
@@ -36,11 +36,7 @@ const Navbar = () => {
         )}
         <h6 className="font-bold">nat20</h6>
       </div>
-      <div
-        className={`${
-          showMobileLinks ? "flex animate-show" : "hidden"
-        } md:flex md:flex-col gap-1 p-4 transition-all`}
-      >
+      <div className="flex md:flex-col gap-1 p-4 transition-all">
         {links.map((link) => (
           <NavItem key={link.path} {...link} />
         ))}

@@ -6,7 +6,13 @@ import {
   GiSwapBag,
 } from "react-icons/gi"
 
-const InventoryItem = ({ name, amt, item_type }: Item) => {
+const InventoryItem = ({
+  item,
+  onClick,
+}: {
+  item: Item
+  onClick: (item: Item) => void
+}) => {
   const iconMap = {
     weapon: <GiAxeSword />,
     potion: <GiPotionBall />,
@@ -16,22 +22,24 @@ const InventoryItem = ({ name, amt, item_type }: Item) => {
   }
   return (
     <div
-      className="flex flex-col items-center p-4 
+      className="flex flex-col items-center justify-center p-4 
       bg-light-bg-alt dark:bg-dark-bg-alt 
     shadow-hard rounded-lg w-full md:w-[10rem] md:h-[10rem]
-    relative"
+    relative overflow-hidden group cursor-pointer"
+      onClick={() => onClick(item)}
     >
-      {amt > 1 && (
+      {item.amt > 1 && (
         <div
-          className="absolute top-0 right-0 m-2 bg-light dark:bg-dark-bg 
+          className="absolute bottom-0 right-0 m-2 bg-light-bg dark:bg-dark-bg 
       p-1 w-8 flex items-center justify-center rounded-md"
         >
-          {amt}
+          {item.amt}
         </div>
       )}
-      <h1 className="text-6xl">{iconMap[item_type]}</h1>
-      <h3 className="text-lg text-center">{name}</h3>
-      <h5 className="capitalize opacity-40">{item_type}</h5>
+
+      <h1 className="text-5xl">{iconMap[item.item_type]}</h1>
+      <h3 className="text-lg text-center">{item.name}</h3>
+      <h5 className="capitalize opacity-40">{item.item_type}</h5>
     </div>
   )
 }

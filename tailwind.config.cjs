@@ -8,6 +8,7 @@ module.exports = {
         "light-bg": "#f0f2f5",
         "dark-bg-alt": "#1f283e",
         "light-bg-alt": "#ffffff",
+        "modal-bg": "#00000080",
       },
       boxShadow: {
         soft: "rgba(149, 157, 165, 0.2) 0px 8px 24px",

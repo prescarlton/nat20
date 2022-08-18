@@ -22,7 +22,7 @@ const Button = ({
       ${variant == "filled" && "bg-sky-500"} 
       ${variant == "outlined" && "border-sky-500 border-2 text-sky-500"}
       ${variant == "text" && "text-sky-500"}
-      ${size == "small" && "py-1 px-3"}
+      ${size == "small" && "py-1 px-3 text-sm"}
       ${size == "large" && "py-2 px-4"}
       ${className}`}
       onClick={onClick}

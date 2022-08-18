@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { FaMoneyBill, FaPlusCircle } from "react-icons/fa"
+import { FaMoneyBill, FaPlus, FaPlusCircle } from "react-icons/fa"
 import { GiGoldBar, GiGoldNuggets, GiMoneyStack } from "react-icons/gi"
 import Button from "../components/common/Button"
 import PageTitle from "../components/common/PageTitle"
@@ -31,8 +31,8 @@ const InventoryPage = () => {
       <div className="flex flex-col items-start gap-2 my-4">
         <div className="flex items-center gap-1">
           <h1 className="text-xl">Currency</h1>
-          <Button variant="text">
-            <GiMoneyStack />
+          <Button variant="text" size="small">
+            <FaPlus />
             Add Currency
           </Button>
         </div>
@@ -69,8 +69,8 @@ const InventoryPage = () => {
       <div className="flex flex-col items-start gap-2">
         <div className="flex items-center gap-1">
           <h1 className="text-xl">Items</h1>
-          <Button variant="text" onClick={handleOpenAddModal}>
-            <FaPlusCircle />
+          <Button variant="text" onClick={handleOpenAddModal} size="small">
+            <FaPlus />
             Add Item
           </Button>
         </div>

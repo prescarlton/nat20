@@ -7,6 +7,7 @@ export const fakeItems: InventoryItem[] = [
     name: "Arcane Focus",
     amt: 1,
     item_type: Item.Gear,
+    index: "arcane-focus",
   },
   {
     id: uuid(),
@@ -28,7 +29,7 @@ export const fakeItems: InventoryItem[] = [
   },
   {
     id: uuid(),
-    name: "Quarter Staff",
+    name: "Quarterstaff",
     amt: 1,
     item_type: Item.Weapon,
   },

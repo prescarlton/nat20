@@ -8,6 +8,7 @@ export enum Item {
 
 export interface InventoryItem {
   id: string
+  index?: string
   name: string
   amt: number
   item_type: Item

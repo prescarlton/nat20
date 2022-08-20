@@ -5,7 +5,6 @@ import InventoryPage from "./pages/Inventory"
 import LoginPage from "./pages/Login"
 import MessagesPage from "./pages/Messages"
 import NotesPage from "./pages/Notes"
-import ProtectedRoute from "./pages/ProtectedRoute"
 
 const AppRouter = () => {
   return (

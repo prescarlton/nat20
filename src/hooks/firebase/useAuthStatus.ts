@@ -11,6 +11,7 @@ export const useAuthListener = () => {
   useEffect(() => {
     // auth listener to keep track of user signing in and out
     firebaseAuth.onAuthStateChanged((user) => {
+      console.log(user)
       if (user) {
         setLoggedIn(true)
       }

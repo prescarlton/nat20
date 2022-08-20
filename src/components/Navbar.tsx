@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth"
 import { firebaseAuth } from "../firebase"
 import Button from "./common/Button"
 import { useNavigate } from "react-router-dom"
+import CharacterDisplay from "./common/CharacterDisplay"
 
 const Navbar = () => {
   const [showMobileLinks, setShowMobileLinks] = useState(false)
@@ -34,10 +35,10 @@ const Navbar = () => {
   `}
     >
       <div
-        className="flex items-center justify-between md:justify-center 
+        className="flex items-center justify-between md:justify-center
       text-white p-4 md:pt-6 gap-4"
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4  md:flex-col md:gap-2">
           {showMobileLinks ? (
             <MdClose
               className={`text-2xl md:hidden`}
@@ -50,6 +51,7 @@ const Navbar = () => {
             />
           )}
           <h6 className="font-bold">nat20</h6>
+          <CharacterDisplay />
         </div>
         <Button
           variant="text"

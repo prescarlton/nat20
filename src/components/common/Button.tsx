@@ -6,6 +6,7 @@ export interface ButtonProps {
   className?: string
   variant?: "filled" | "outlined" | "text"
   size?: "small" | "large"
+  type?: "button" | "submit"
 }
 
 const Button = ({
@@ -14,11 +15,12 @@ const Button = ({
   className,
   variant = "filled",
   size = "large",
+  type = "button",
 }: ButtonProps) => {
   return (
     <button
       className={`
-      rounded-lg text-white flex items-center gap-2
+      rounded-lg text-white flex items-center justify-center gap-2
       ${variant == "filled" && "bg-sky-500"} 
       ${variant == "outlined" && "border-sky-500 border-2 text-sky-500"}
       ${variant == "text" && "text-sky-500"}
@@ -26,6 +28,7 @@ const Button = ({
       ${size == "large" && "py-2 px-4"}
       ${className}`}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>

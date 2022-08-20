@@ -6,7 +6,7 @@ const Navbar = () => {
   const [showMobileLinks, setShowMobileLinks] = useState(false)
   const toggleMobileLinks = () => setShowMobileLinks((prev) => !prev)
   const links = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/home" },
     { label: "Inventory", path: "/inventory" },
     { label: "Notes", path: "/notes" },
     { label: "Messages", path: "/messages" },

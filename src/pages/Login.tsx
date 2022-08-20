@@ -3,24 +3,33 @@ import Button from "../components/common/Button"
 import { firebaseAuth } from "../firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { GiDiceTwentyFacesTwenty } from "react-icons/gi"
+import { Navigate, useNavigate } from "react-router-dom"
+import { useAuthListener } from "../hooks/firebase/useAuthStatus"
+import LoadingPage from "./Loading"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+  const { loggedIn, checkingStatus } = useAuthListener()
   const handleLogin = () => {
-    signInWithEmailAndPassword(firebaseAuth, email, password).then(
-      (userCredential) => {
+    signInWithEmailAndPassword(firebaseAuth, email, password)
+      .then((userCredential) => {
         const user = userCredential.user
+        navigate("/home")
         console.log(user)
-      }
-    )
+      })
+      .catch(() => {
+        alert("invalid login")
+      })
   }
   const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) =>
     setEmail(e.currentTarget.value)
 
   const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) =>
     setPassword(e.currentTarget.value)
-
+  if (checkingStatus) return <LoadingPage />
+  if (loggedIn) return <Navigate to="/home" replace={true} />
   return (
     <div className="h-full overflow-hidden flex flex-colbg-light-bg dark:bg-dark-bg md:p-8 items-center justify-center">
       <div

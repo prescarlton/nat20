@@ -1,7 +1,7 @@
-import { CharacterBlurb } from "./Character"
+import { ApiReference } from "../../api/SharedTypes"
 
 export interface User {
   name: string
   email: string
-  characters: CharacterBlurb[]
+  characters: ApiReference[]
 }

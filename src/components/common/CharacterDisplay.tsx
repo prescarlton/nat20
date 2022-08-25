@@ -2,7 +2,7 @@ import { useAppContext } from "../../contexts/App"
 
 const CharacterDisplay = () => {
   const { character } = useAppContext()
-  if (!character) return <div>No Character Selected.</div>
+  if (!character) return <div></div>
   return (
     <div className="flex gap-2">
       <h6 className="">{character.name}</h6>

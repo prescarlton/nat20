@@ -1,4 +1,4 @@
-import { Weapon } from "../../../api/DNDService/ServiceTypes"
+import { Weapon } from "../../../api/DNDService/EquipmentService/ServiceTypes"
 import ItemStat from "./ItemStat"
 
 const WeaponInfo = ({ weapon }: { weapon: Weapon }) => {

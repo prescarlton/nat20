@@ -1,4 +1,4 @@
-import { CreateDNDService } from ".."
+import { CreateDNDService } from "../.."
 
 const EquipmentService = CreateDNDService({ baseURL: "/equipment" })
 export default EquipmentService

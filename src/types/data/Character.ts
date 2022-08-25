@@ -4,4 +4,7 @@ export interface CharacterBlurb {
   reference: string
 }
 
-export interface Character {}
+export interface Character {
+  class: string
+  name: string
+}

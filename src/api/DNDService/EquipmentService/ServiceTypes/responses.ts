@@ -1,4 +1,4 @@
-import { ApiReference } from "../../SharedTypes"
+import { ApiReference } from "../../../SharedTypes"
 
 export interface Cost {
   quantity: number

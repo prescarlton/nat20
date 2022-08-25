@@ -8,7 +8,7 @@ import ModalTitle from "../common/ModalTitle"
 import useGetEquipmentIndex from "../../hooks/api/equipment/useGetEquipmentIndex"
 import { slugify } from "../../util"
 import WeaponInfo from "./ItemInfo/WeaponInfo"
-import { Weapon } from "../../api/DNDService/ServiceTypes"
+import { Weapon } from "../../api/DNDService/EquipmentService/ServiceTypes"
 import { useEffect } from "react"
 
 interface ItemModalProps extends ModalProps {

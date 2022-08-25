@@ -3,6 +3,7 @@ import "./index.css"
 import { BrowserRouter } from "react-router-dom"
 import AppRouter from "./router"
 import { QueryClient, QueryClientProvider } from "react-query"
+import { AppProvider } from "./contexts/App"
 
 const container = document.getElementById("root")
 const root = ReactDOM.createRoot(container!)
@@ -19,7 +20,9 @@ const queryClient = new QueryClient({
 root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
-      <AppRouter />
+      <AppProvider>
+        <AppRouter />
+      </AppProvider>
     </QueryClientProvider>
   </BrowserRouter>
 )

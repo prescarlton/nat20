@@ -12,12 +12,6 @@ import { firebaseAuth } from "../firebase"
 import { User } from "../types/data/User"
 
 interface AppContextInterface {
-  // name: string
-  // email: string
-  // character: {
-  //   name: string
-  //   id: string
-  // }
   userData: User | undefined
   userAuth: UserAuth | undefined
   character: ApiReference | undefined

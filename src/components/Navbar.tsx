@@ -34,11 +34,8 @@ const Navbar = () => {
       ${showMobileLinks ? "h-32" : "h-14"} overflow-hidden
   `}
     >
-      <div
-        className="flex items-center justify-between md:justify-center
-      text-white p-4 md:pt-6 gap-4"
-      >
-        <div className="flex items-center gap-4  md:flex-col md:gap-2">
+      <div className="flex items-center justify-between p-4 text-white md:justify-center md:pt-6 gap-4">
+        <div className="flex items-center gap-4 md:flex-col md:gap-2">
           {showMobileLinks ? (
             <MdClose
               className={`text-2xl md:hidden`}
@@ -61,12 +58,12 @@ const Navbar = () => {
           Logout
         </Button>
       </div>
-      <div className="flex md:flex-col gap-1 p-4 transition-all">
+      <div className="flex p-4 md:flex-col gap-1 transition-all">
         {links.map((link) => (
           <NavItem key={link.path} {...link} />
         ))}
       </div>
-      <div className="hidden absolute md:block bottom-0 p-4">
+      <div className="absolute bottom-0 hidden p-4 md:block">
         <Button variant="text" onClick={handleLogOut}>
           Logout
         </Button>

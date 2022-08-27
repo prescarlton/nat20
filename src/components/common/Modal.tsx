@@ -5,8 +5,9 @@ export interface ModalProps {
   isOpen: boolean
   onClose: () => void
   children?: ReactNode
+  showClose?: boolean
 }
-const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+const Modal = ({ isOpen, onClose, children, showClose = true }: ModalProps) => {
   return (
     <div
       className={`fixed ${
@@ -21,9 +22,11 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       "
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="absolute top-0 right-0 m-4">
-          <MdClose className="text-xl cursor-pointer" onClick={onClose} />
-        </div>
+        {showClose && (
+          <div className="absolute top-0 right-0 m-4">
+            <MdClose className="text-xl cursor-pointer" onClick={onClose} />
+          </div>
+        )}
         {children}
       </div>
     </div>

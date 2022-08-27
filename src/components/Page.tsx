@@ -13,7 +13,7 @@ function ErrorFallback({ resetErrorBoundary }: FallbackProps) {
 const Page = ({ children }: { children: ReactNode }) => {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <div className="p-4 overflow-auto flex flex-1 w-full flex-col dark:text-white">
+      <div className="flex flex-col flex-1 w-full p-4 overflow-auto dark:text-white">
         {children}
       </div>
     </ErrorBoundary>

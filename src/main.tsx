@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 import AppRouter from "./router"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { AppProvider } from "./contexts/App"
+import { ModalsProvider } from "./contexts/Modals"
 
 const container = document.getElementById("root")
 const root = ReactDOM.createRoot(container!)
@@ -21,7 +22,9 @@ root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <AppProvider>
-        <AppRouter />
+        <ModalsProvider>
+          <AppRouter />
+        </ModalsProvider>
       </AppProvider>
     </QueryClientProvider>
   </BrowserRouter>
